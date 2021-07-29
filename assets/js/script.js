@@ -43,9 +43,11 @@ searchBtn.on("click", function(event){
 //get query string param from url
 //console.log(window.location.search);
 var queryStringParam = window.location.search;
-var queryPair = queryStringParam.split("?");
-//console.log(queryPair);
-var queryKeyValue = queryPair[1].split("=");
-//console.log(queryKeyValue);
-console.log("queryKeyValue[0]: " + queryKeyValue[0]);
-console.log("queryKeyValue[1]: " + queryKeyValue[1]);
+if (queryStringParam) {
+    var queryPair = queryStringParam.split("?");
+    //console.log(queryPair);
+    var queryKeyValue = queryPair[1].split("=");
+    //console.log(queryKeyValue);
+    console.log("queryKeyValue[0]: " + queryKeyValue[0]);
+    console.log("queryKeyValue[1]: " + queryKeyValue[1]);
+}
