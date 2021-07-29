@@ -1,6 +1,7 @@
 //DEPENDENCIES =================================================================
 var searchBtn = $("#search-usa-medalist");
 
+
 //DATA =========================================================================
 
 //FUNCTIONS ====================================================================
@@ -38,3 +39,13 @@ searchBtn.on("click", function(event){
         alert("Please enter a search term.");
     }
 });
+
+//get query string param from url
+//console.log(window.location.search);
+var queryStringParam = window.location.search;
+var queryPair = queryStringParam.split("?");
+//console.log(queryPair);
+var queryKeyValue = queryPair[1].split("=");
+//console.log(queryKeyValue);
+console.log("queryKeyValue[0]: " + queryKeyValue[0]);
+console.log("queryKeyValue[1]: " + queryKeyValue[1]);
