@@ -1,51 +1,158 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" type="text/css" href="./assets/css/style.css">    
-    <title>Olympics USA Medals & Medalist News</title>
-  </head>
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" type="text/css" href="./assets/css/style.css" />
+		<title>Olympics USA Medals & Medalist News</title>
+		<!-- Materialize CSS Here -->
+		<!-- Compiled and minified CSS -->
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+		/>
+		<link
+			href="https://fonts.googleapis.com/icon?family=Material+Icons"
+			rel="stylesheet"
+		/>
+	</head>
 
-  <body>
-    <header><h1><img class="second-element" src="./assets/img/olympic.png"  style="object-fit:initial;
-    object-position:left;
-      width:200px;
-      height:300px;
-      border: solid 1px #CCC"/>OwinPics<span class="country">-USA</span></h1>
-    </header>
-    
-    <main>
-      <div>
-        <input type="text" id="searchInput" />
-        <button id="search-usa-medalist">search</button>
-        <a href="medals.html?medal=gold"><img
-          src="https://media.istockphoto.com/vectors/empty-gold-medal-shiny-golden-round-seal-for-certificate-or-winner-vector-id1154968641?k=6&m=1154968641&s=612x612&w=0&h=CrNfmDjGAg3hNbiseRlowBIenUBZ3O59gXk95Rpfk0Q="
-          alt="gold medal"
-          width="150"
-          height="150"
-        /></a>
+	<body>
+		<header class="container-fluid orange accent-3">
+			<!-- Logo & Name -->
+			<div class="container">
+				<div class="row">
+					<div class="col s2">
+						<img
+							src="./assets/img/olympic.png"
+							class="logo"
+							alt="Tokyo Olympics 2020 Logo"
+						/>
+					</div>
+					<div class="col s10">
+						<h1 class="right">
+							O<span class="white-text">win</span>Pics -
+							<span class="blue-text">USA</span>
+						</h1>
+					</div>
+				</div>
+			</div>
+		</header>
 
-        <a href="medals.html?medal=silver">
-        <img
-          src="https://media.istockphoto.com/photos/second-place-silver-medal-isolated-picture-id947477444?s=612x612"
-          alt="silver medal"
-          width="150"
-          height="150"
-        /></a>
-        <a href="medals.html?medal=bronze">
-        <img
-          src="https://image.shutterstock.com/image-vector/bronze-medal-vector-copper-3rd-600w-695794561.jpg"
-          alt="bronze medal"
-          width="150"
-          height="150"
-        /><a>
+		<main class="container">
+			<!-- Search Box -->
+			<div class="row search-section">
+				<div class="col s1"></div>
+				<div class="col s10 center">
+					<div class="lighten-2 center search-box">
+						<input type="text" id="searchInput" />
+					</div>
+					<button
+						id="search-usa-medalist"
+						class="btn waves-effect waves-dark search-button blue"
+					>
+						Search <i class="material-icons right">search</i>
+					</button>
+				</div>
+				<div class="col s1"></div>
+			</div>
 
-        <article>News highlights on USA Olympics</article>
-      </div>
-    </main>
-    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-    <script src="./assets/js/script.js"></script>
-  </body>
+			<!-- Medal Links -->
+			<div class="row medals-section">
+				<!-- Gold -->
+				<div class="col s4">
+					<div class="card">
+						<div class="card-image">
+							<a href="medals.html?medal=gold">
+								<img
+									src="https://media.istockphoto.com/vectors/empty-gold-medal-shiny-golden-round-seal-for-certificate-or-winner-vector-id1154968641?k=6&m=1154968641&s=612x612&w=0&h=CrNfmDjGAg3hNbiseRlowBIenUBZ3O59gXk95Rpfk0Q="
+									alt="olympics gold medal"
+								/>
+								<a
+									class="btn-floating halfway-fab waves-effect waves-light blue"
+									><i class="material-icons large">search</i></a
+								>
+							</a>
+						</div>
+						<div class="card-content orange">
+							<h3 class="white-text">Gold Medalists</h3>
+						</div>
+					</div>
+				</div>
+
+				<!-- Silver -->
+				<div class="col s4">
+					<div class="card">
+						<div class="card-image">
+							<a href="medals.html?medal=silver">
+								<img
+									src="https://media.istockphoto.com/photos/second-place-silver-medal-isolated-picture-id947477444?s=612x612"
+									alt="olympics silver medal"
+								/>
+								<a
+									class="btn-floating halfway-fab waves-effect waves-light blue"
+									><i class="material-icons">search</i></a
+								>
+							</a>
+						</div>
+						<div class="card-content orange">
+							<h3 class="white-text">Silver Medalists</h3>
+						</div>
+					</div>
+				</div>
+
+				<!-- Bronze -->
+				<div class="col s4">
+					<div class="card">
+						<div class="card-image">
+							<a href="medals.html?medal=bronze">
+								<img
+									src="https://image.shutterstock.com/image-vector/bronze-medal-vector-copper-3rd-600w-695794561.jpg"
+									alt="olympics bronze medal"
+								/>
+								<a
+									class="btn-floating halfway-fab waves-effect waves-light blue"
+									><i class="material-icons">search</i></a
+								>
+							</a>
+						</div>
+						<div class="card-content orange">
+							<h3 class="white-text">Bronze Medalists</h3>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<!-- Article Section -->
+			<article class="row">
+				<div class="col s12">
+					<div class="card blue">
+						<div class="card-content white-text">
+							<span class="card-title">News highlights on USA Olympics</span>
+							<p>
+								Lorem ipsum dolor sit amet consectetur adipisicing elit.
+								Explicabo cum nemo dolore, blanditiis rerum rem odio quidem
+								commodi maiores sequi vitae alias perspiciatis dolorem maxime
+								earum ea esse quas saepe.
+							</p>
+							<hr />
+						</div>
+					</div>
+				</div>
+			</article>
+		</main>
+
+		<!-- Footer Section -->
+		<footer class="page-footer footer-section black">
+			<div class="footer-copyright">
+				<div class="container">
+					&copy; 2021 Copyright Team Mavericks
+					<a class="grey-text text-lighten-4 right" href="#!">OwinPics!</a>
+				</div>
+			</div>
+		</footer>
+		<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+		<script src="./assets/js/script.js"></script>
+	</body>
 </html>
