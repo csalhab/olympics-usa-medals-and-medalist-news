@@ -53,7 +53,10 @@ searchBtn.on("click", function(event){
     if (searchBtnInput) {
         searchNews(searchBtnInput);
     } else {
-        alert("Please enter a search term.");
+            var elems = document.querySelector("#modal1");
+            var startingTop = 100;
+            var instance = M.Modal.init(elems, startingTop);
+            instance.open();
     }
 });
 
@@ -65,3 +68,4 @@ if (queryStringParam) {
     //console.log("queryKeyValue[0]: " + queryKeyValue[0]);
     //console.log("queryKeyValue[1]: " + queryKeyValue[1]);
 }
+
