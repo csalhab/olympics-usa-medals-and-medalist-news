@@ -1,8 +1,13 @@
-h1{
-    color:darkred;
-    background-color:orange;
+h1 {
+    color: darkred;
+    background-color: orange;
     text-align: center;
+    line-height: .6;
+    font-size: 100px;
+    display: flex;
+    align-items: center;
 }
+
 
 .country{
 color:darkblue;
