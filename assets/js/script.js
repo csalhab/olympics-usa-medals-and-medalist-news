@@ -1,14 +1,17 @@
 //DEPENDENCIES =================================================================
 var searchBtn = $("#search-usa-medalist");
 
+var articlesArray = [];
+
 
 //DATA =========================================================================
 
 //FUNCTIONS ====================================================================
-function searchNews(searchTerm) {
+async function searchNews(searchTerm) {
 
     constructedNEWSURL = "https://api.nytimes.com/svc/search/v2/articlesearch.json?q=" + searchTerm + "&api-key=GGFWJmCqMq0NCTFkqwJ3PAgGRrCDZmlJ"
-    fetch(constructedNEWSURL, {
+
+    var data = await fetch(constructedNEWSURL, {
         method: "GET", //GET is the default.
         credentials: "same-origin", // include, *same-origin, omit
         redirect: "follow", // manual, *follow, error
@@ -16,15 +19,29 @@ function searchNews(searchTerm) {
         .then(function (response) {
             return response.json();
         })
-        .then(function (data) {
-            console.log("===== SEARCH RESULTS: =====");
-            console.log(data);
-        })
-        .catch(function (err) {
-            alert("Please make sure you entered a search term.");
+ 
+    extractAndStoreNYTData(data);
 
-        });
+}
 
+function extractAndStoreNYTData (NYTData) {
+
+    //extract headline and link to story
+    for (var i=0; i < NYTData.response.docs.length; i++) {
+        var snippet = NYTData.response.docs[i].snippet;
+        var web_url = NYTData.response.docs[i].web_url;
+        articlesArray.push({headline: snippet, storyLink: web_url});
+    }
+
+    //save in localstorage
+    localStorage.setItem("articlesArray", JSON.stringify(articlesArray));
+
+}
+
+function getArticlesArrayFromLocalStorage() {
+
+    var lastArticles = JSON.parse(localStorage.getItem("articlesArray"));
+    return lastArticles;
 }
 
 //USER INTERACTIONS ============================================================
@@ -41,13 +58,10 @@ searchBtn.on("click", function(event){
 });
 
 //get query string param from url
-//console.log(window.location.search);
 var queryStringParam = window.location.search;
 if (queryStringParam) {
     var queryPair = queryStringParam.split("?");
-    //console.log(queryPair);
     var queryKeyValue = queryPair[1].split("=");
-    //console.log(queryKeyValue);
-    console.log("queryKeyValue[0]: " + queryKeyValue[0]);
-    console.log("queryKeyValue[1]: " + queryKeyValue[1]);
+    //console.log("queryKeyValue[0]: " + queryKeyValue[0]);
+    //console.log("queryKeyValue[1]: " + queryKeyValue[1]);
 }
