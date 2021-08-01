@@ -62,3 +62,11 @@ header img {
 	padding: 0;
 	padding-bottom: 30px;
 }
+
+.medalists-section {
+	display: none;
+}
+
+.medal {
+	cursor: pointer;
+}
