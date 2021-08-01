@@ -78,19 +78,16 @@
 			<!-- Medal Links -->
 			<div class="row medals-section">
 				<!-- Gold -->
-				<div class="col s4">
-					<div class="card">
+				<div onclick="goldClick('Gold');" class="col s4">
+					<div class="card medal">
 						<div class="card-image">
-							<a href="medals.html?medal=gold">
-								<img
-									src="https://media.istockphoto.com/vectors/empty-gold-medal-shiny-golden-round-seal-for-certificate-or-winner-vector-id1154968641?k=6&m=1154968641&s=612x612&w=0&h=CrNfmDjGAg3hNbiseRlowBIenUBZ3O59gXk95Rpfk0Q="
-									alt="olympics gold medal"
-								/>
-								<a
-									class="btn-floating halfway-fab waves-effect waves-light blue"
-									><i class="material-icons large">search</i></a
-								>
-							</a>
+							<img
+								src="https://media.istockphoto.com/vectors/empty-gold-medal-shiny-golden-round-seal-for-certificate-or-winner-vector-id1154968641?k=6&m=1154968641&s=612x612&w=0&h=CrNfmDjGAg3hNbiseRlowBIenUBZ3O59gXk95Rpfk0Q="
+								alt="olympics gold medal"
+							/>
+							<a class="btn-floating halfway-fab waves-effect waves-light blue"
+								><i class="material-icons large">search</i></a
+							>
 						</div>
 						<div class="card-content orange">
 							<h3 class="white-text">Gold <br />Medalists</h3>
@@ -99,19 +96,16 @@
 				</div>
 
 				<!-- Silver -->
-				<div class="col s4">
-					<div class="card">
+				<div onclick="silverClick('Silver');" class="col s4">
+					<div class="card medal">
 						<div class="card-image">
-							<a href="medals.html?medal=silver">
-								<img
-									src="https://media.istockphoto.com/photos/second-place-silver-medal-isolated-picture-id947477444?s=612x612"
-									alt="olympics silver medal"
-								/>
-								<a
-									class="btn-floating halfway-fab waves-effect waves-light blue"
-									><i class="material-icons">search</i></a
-								>
-							</a>
+							<img
+								src="https://media.istockphoto.com/photos/second-place-silver-medal-isolated-picture-id947477444?s=612x612"
+								alt="olympics silver medal"
+							/>
+							<a class="btn-floating halfway-fab waves-effect waves-light blue"
+								><i class="material-icons">search</i></a
+							>
 						</div>
 						<div class="card-content orange">
 							<h3 class="white-text">
@@ -123,19 +117,16 @@
 				</div>
 
 				<!-- Bronze -->
-				<div class="col s4">
-					<div class="card">
+				<div onclick="bronzeClick('Bronze');" class="col s4">
+					<div class="card medal">
 						<div class="card-image">
-							<a href="medals.html?medal=bronze">
-								<img
-									src="https://image.shutterstock.com/image-vector/bronze-medal-vector-copper-3rd-600w-695794561.jpg"
-									alt="olympics bronze medal"
-								/>
-								<a
-									class="btn-floating halfway-fab waves-effect waves-light blue"
-									><i class="material-icons">search</i></a
-								>
-							</a>
+							<img
+								src="https://image.shutterstock.com/image-vector/bronze-medal-vector-copper-3rd-600w-695794561.jpg"
+								alt="olympics bronze medal"
+							/>
+							<a class="btn-floating halfway-fab waves-effect waves-light blue"
+								><i class="material-icons">search</i></a
+							>
 						</div>
 						<div class="card-content orange">
 							<h3 class="white-text">
@@ -144,6 +135,52 @@
 							</h3>
 						</div>
 					</div>
+				</div>
+			</div>
+
+			<!-- Medalists Section -->
+			<div class="row medalists-section">
+				<div class="col s6">
+					<h5 id="showing-medalists">Showing Gold Medalists</h5>
+				</div>
+				<div class="col s6">
+					<div class="right">
+						<button
+							id="back-to-medals"
+							class="modal-close btn waves-effect waves-dark orange"
+						>
+							Back to medals <i class="material-icons right"> emoji_events </i>
+						</button>
+					</div>
+				</div>
+				<div class="col s12">
+					<table class="striped">
+						<thead>
+							<tr>
+								<th>Sports</th>
+								<th>Medal</th>
+								<th>Count</th>
+							</tr>
+						</thead>
+
+						<tbody>
+							<tr>
+								<td>Soccer</td>
+								<td class="active-medal"></td>
+								<td>2</td>
+							</tr>
+							<tr>
+								<td>Track</td>
+								<td class="active-medal"></td>
+								<td>1</td>
+							</tr>
+							<tr>
+								<td>Tennis</td>
+								<td class="active-medal"></td>
+								<td>3</td>
+							</tr>
+						</tbody>
+					</table>
 				</div>
 			</div>
 

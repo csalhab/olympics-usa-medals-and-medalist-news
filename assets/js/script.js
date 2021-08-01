@@ -2,6 +2,11 @@
 var searchBtn = $("#search-usa-medalist");
 var newsSection = $("#news-section");
 var newsHeading = $("#news-subheading");
+var showingMedalists = $("#showing-medalists");
+var backToMedals = $("#back-to-medals");
+var medalsSection = $(".medals-section");
+var medalistsSection = $(".medalists-section");
+var activeMedal = $(".active-medal");
 
 var articlesArray = [];
 
@@ -48,7 +53,6 @@ function getArticlesArrayFromLocalStorage() {
 
 	// Display the searched result
 	displayNewsArticles(lastArticles);
-	// return lastArticles;
 }
 
 // Create news articles elements
@@ -93,11 +97,27 @@ function displayNewsArticles(newsArticlesArray) {
 		var currentNewsObject = newsArticlesArray[i];
 
 		// Call the create article function to display current article on DOM
-		createNewsElements(currentNewsObject);
+		if (currentNewsObject.headline) createNewsElements(currentNewsObject);
 	}
 }
 
+// Show clicked medal table
+function showClickedMedalists(medalName) {
+	medalistsSection.css("display", "block");
+	medalsSection.css("display", "none");
+	showingMedalists.text(`Showing ${medalName} Medalists`);
+	activeMedal.text(medalName);
+}
+
+// Hide clicked medal table
+function hideClickedMedalists() {
+	medalsSection.css("display", "block");
+	medalistsSection.css("display", "none");
+	showingMedalists.text(``);
+}
+
 //USER INTERACTIONS ============================================================
+
 // When a user makes a search request
 searchBtn.on("click", function (event) {
 	event.preventDefault();
@@ -115,6 +135,20 @@ searchBtn.on("click", function (event) {
 		instance.open();
 	}
 });
+
+// When user clicks on any medal to see it's medalists
+function goldClick(medalName) {
+	showClickedMedalists(medalName);
+}
+function silverClick(medalName) {
+	showClickedMedalists(medalName);
+}
+function bronzeClick(medalName) {
+	showClickedMedalists(medalName);
+}
+
+// When user clicks on "Back to medals button"
+backToMedals.on("click", hideClickedMedalists);
 
 //INITIALIZATION ===============================================================
 //get query string param from url
