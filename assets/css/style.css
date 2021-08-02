@@ -1,8 +1,72 @@
-:root {
-	--blue-color: lightblue;
+/* h1 {
+	color: darkred;
+	background-color: orange;
+	text-align: center;
+	line-height: 0.6;
+	font-size: 100px;
+	display: flex;
+	align-items: center;
 }
 
-::selection {
-	background-color: var(--blue-color);
-	color: var(--white-color);
+.country {
+	color: darkblue;
+} */
+
+/* Materialize CSS Modification Starts Here */
+body {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+header h1 {
+	font-weight: bold;
+}
+
+header img {
+	width: 100%;
+	height: 150px;
+	margin-top: 5px;
+}
+
+.search-section {
+	margin: 5% auto;
+}
+
+.search-box {
+	border-radius: 5px;
+	padding: 5px 5px 0 5px;
+	text-align: center;
+	background-color: blanchedalmond;
+}
+
+.search-box input {
+	text-align: center;
+}
+
+.search-button {
+	margin: 2% auto;
+}
+
+.medals-section {
+	margin: 5% auto;
+}
+
+.medals-section img {
+	width: 100%;
+	height: 250px;
+}
+
+.page-footer {
+	border-top: 20px solid orange;
+	padding: 0;
+	padding-bottom: 30px;
+}
+
+.medalists-section {
+	display: none;
+}
+
+.medal {
+	cursor: pointer;
 }
