@@ -71,7 +71,7 @@ GGFWJmCqMq0NCTFkqwJ3PAgGRrCDZmlJ
 
 [Gospel Chukwu](https://github.com/Brondchux)
 
-[Anne J](https://github.com/victoire1806)
+[Anne Joseph](https://github.com/victoire1806)
 
 [Stephanie Blanchard](https://github.com/sblanchard10)
 
